@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark: #181818;
+  --black: #212121;
+  --gray: #343434;
+  --white: #CECECE;
+  --violet: #522FB9;
+  --darkviolet: #2D233C;
+  --lightgray: #AFAFAF;
+  --darkgreen: #20342A;
+  --lightgreen: #1E9D6B;
+  --darkblue: #23343C;
+  --lightblue: #32C0FF;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CECECE;
+  border-radius: 20px;
+}
