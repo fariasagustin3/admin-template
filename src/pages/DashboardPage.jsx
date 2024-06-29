@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import { useStore } from "../store";
-import { CiWallet, CiCreditCard1 } from "react-icons/ci";
+import { CiWallet, CiCreditCard1, CiTrash } from "react-icons/ci";
 import { FaUserFriends, FaRegUserCircle } from "react-icons/fa";
-import { IoBagHandleOutline, IoDiamond, IoFlagOutline } from "react-icons/io5";
+import { IoBagHandleOutline, IoDiamond, IoFlagOutline, IoPencil } from "react-icons/io5";
 import { IoIosStats } from "react-icons/io";
 import {
   Area,
@@ -14,6 +14,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { products } from "../data/products";
 
 const rangeData = [
   { day: "05-01", temperature: [-1, 10] },
@@ -320,7 +321,7 @@ const DashboardPage = () => {
                 </AreaChart>
               </ResponsiveContainer>
               {/* contenedor de los datos mensuales */}
-              <div style={{ height: '50%', marginTop: 10 }}>
+              <div style={{ height: "50%", marginTop: 10 }}>
                 <div className="grid grid-cols-12 gap-2">
                   <div className="grid col-span-2 place-content-center bg-[var(--darkgreen)] rounded-md">
                     <CiWallet color="#19b265" size={24} strokeWidth={1.5} />
@@ -344,7 +345,11 @@ const DashboardPage = () => {
 
                 <div className="grid grid-cols-12 gap-2 mt-5">
                   <div className="grid col-span-2 place-content-center bg-[var(--darkblue)] rounded-md">
-                    <IoFlagOutline color="#2e4fc3" size={24} strokeWidth={1.5} />
+                    <IoFlagOutline
+                      color="#2e4fc3"
+                      size={24}
+                      strokeWidth={1.5}
+                    />
                   </div>
 
                   <div className="grid col-span-5">
@@ -368,7 +373,95 @@ const DashboardPage = () => {
         </div>
 
         {/* contenedor correspondiente a la tabla de datos de ordenes */}
-        <div></div>
+        <div className="w-full border-[1px] border-[var(--gray)] mt-5 rounded-md px-5 py-5">
+          <h3 className="text-[var(--white)] font-medium mb-5">
+            Recent Orders
+          </h3>
+          <table className="w-full">
+            <thead>
+              <tr className="bg-[var(--gray)] border-b-[2px] border-b-[var(--white)]">
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  #ID
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Product
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Quantity
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Price
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Date
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Status
+                </th>
+                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr className="border-b-[var(--gray)] border-b-[1px]">
+                  <td className="py-5 text-[var(--white)] font-medium text-center">
+                    #{product.id}
+                  </td>
+                  <td className="w-80">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={product.image}
+                        alt=""
+                        className="w-10 h-10 rounded-md"
+                      />
+                      <span className="text-[var(--white)] font-medium">
+                        {product.title}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                    {product.quantity}
+                  </td>
+                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                    ${product.price}
+                  </td>
+                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                    {product.date}
+                  </td>
+                  <td>
+                    <div
+                      className='text-center text-[var(--lightgray)] font-medium text-sm flex items-center justify-center'
+                    >
+                      <span
+                        className={`${
+                          product.status === "completed"
+                            ? "bg-[var(--lightgreen)]"
+                            : product.status === "cancelled"
+                            ? "bg-[var(--lightred)]"
+                            : "bg-[var(--yellow)]"
+                        } px-3 py-1 rounded-full text-[var(--white)] font-semibold`}
+                      >
+                        {product.status}
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="flex items-center justify-center gap-3">
+                      <button>
+                        <IoPencil size={18} color="#ffab4d" />
+                      </button>
+                      <button>
+                        <CiTrash size={25} color="#f73752" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </Layout>
   );
