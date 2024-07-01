@@ -380,25 +380,25 @@ const DashboardPage = () => {
           <table className="w-full">
             <thead>
               <tr className="bg-[var(--gray)] border-b-[2px] border-b-[var(--white)]">
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left pl-5">
                   #ID
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Product
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Quantity
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Price
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Date
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Status
                 </th>
-                <th className="py-2 text-[var(--white)] font-bold text-sm">
+                <th className="py-2 text-[var(--white)] font-bold text-sm text-left">
                   Actions
                 </th>
               </tr>
@@ -406,7 +406,7 @@ const DashboardPage = () => {
             <tbody>
               {products.map((product) => (
                 <tr className="border-b-[var(--gray)] border-b-[1px]">
-                  <td className="py-5 text-[var(--white)] font-medium text-center">
+                  <td className="py-5 text-[var(--white)] font-medium text-left pl-5">
                     #{product.id}
                   </td>
                   <td className="w-80">
@@ -421,18 +421,18 @@ const DashboardPage = () => {
                       </span>
                     </div>
                   </td>
-                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                  <td className="text-left text-[var(--lightgray)] font-medium text-sm">
                     {product.quantity}
                   </td>
-                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                  <td className="text-left text-[var(--lightgray)] font-medium text-sm">
                     ${product.price}
                   </td>
-                  <td className="text-center text-[var(--lightgray)] font-medium text-sm">
+                  <td className="text-left text-[var(--lightgray)] font-medium text-sm">
                     {product.date}
                   </td>
                   <td>
                     <div
-                      className='text-center text-[var(--lightgray)] font-medium text-sm flex items-center justify-center'
+                      className='text-left text-[var(--lightgray)] font-medium text-sm flex items-center justify-start'
                     >
                       <span
                         className={`${
@@ -448,7 +448,7 @@ const DashboardPage = () => {
                     </div>
                   </td>
                   <td>
-                    <div className="flex items-center justify-center gap-3">
+                    <div className="flex items-center justify-start gap-3">
                       <button>
                         <IoPencil size={18} color="#ffab4d" />
                       </button>
