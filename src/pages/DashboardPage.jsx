@@ -14,7 +14,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { products } from "../data/products";
+import { orders } from "../data/orders";
 
 const rangeData = [
   { day: "05-01", temperature: [-1, 10] },
@@ -404,7 +404,7 @@ const DashboardPage = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {orders.map((product) => (
                 <tr className="border-b-[var(--gray)] border-b-[1px]">
                   <td className="py-5 text-[var(--white)] font-medium text-left pl-5">
                     #{product.id}

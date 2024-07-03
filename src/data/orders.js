@@ -1,50 +1,56 @@
-export const products = [
+export const orders = [
     {
         id: 32454,
         image: '/products/04.png',
         title: 'Yellow Winter Jacket',
-        stock: 50,
+        quantity: 1,
         price: 149,
-        status: 'active',
+        status: 'completed',
+        date: 'Jun 11, 2024'
     },
     {
         id: 24755,
         image: '/products/07.png',
         title: 'Sports Time Watch',
-        stock: 20,
+        quantity: 1,
         price: 185,
-        status: 'active',
+        status: 'completed',
+        date: 'Jun 9, 2024'
     },
     {
         id: 54874,
         image: '/products/10.png',
         title: 'Orange Micro Headphone',
-        stock: 25,
+        quantity: 2,
         price: 199,
-        status: 'inactive',
+        status: 'cancelled',
+        date: 'Jun 15, 2024'
     },
     {
         id: 63756,
         image: '/products/11.png',
         title: 'Smart Mobile Phone',
-        stock: 15,
+        quantity: 2,
         price: 214,
-        status: 'active',
+        status: 'completed',
+        date: 'Jun 8, 2024'
     },
     {
         id: 25684,
         image: '/products/12.png',
         title: 'Pro Samsung Laptop',
-        stock: 10,
+        quantity: 1,
         price: 699,
-        status: 'active',
+        status: 'pending',
+        date: 'Jun 18, 2024'
     },
     {
         id: 16484,
         image: '/products/17.png',
         title: 'Women Red Heals',
-        stock: 55,
+        quantity: 3,
         price: 356,
-        status: 'inactive',
+        status: 'cancelled',
+        date: 'Jun 10, 2024'
     },
 ]
