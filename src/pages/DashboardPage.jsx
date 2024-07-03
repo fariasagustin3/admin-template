@@ -186,7 +186,7 @@ const DashboardPage = () => {
                 </div>
               </div>
               <div className="grid col-span-8 ">
-                <BarChart width={430} height={250} data={rangeData}>
+                <BarChart width={370} height={250} data={rangeData}>
                   <XAxis />
                   <YAxis />
                   <Tooltip />
@@ -225,7 +225,7 @@ const DashboardPage = () => {
                   />
                 </div>
                 <div className="grid col-span-4">
-                  <h3 className="text-[var(--white)] text-2xl font-medium">
+                  <h3 className="text-[var(--white)] text-lg font-medium">
                     $95,286.50
                   </h3>
                   <p className="text-[var(--lightgray)] text-sm">
@@ -244,7 +244,7 @@ const DashboardPage = () => {
                   />
                 </div>
                 <div className="grid col-span-4">
-                  <h3 className="text-[var(--white)] text-2xl font-medium">
+                  <h3 className="text-[var(--white)] text-lg font-medium">
                     $58,820
                   </h3>
                   <p className="text-[var(--lightgray)] text-sm">
@@ -263,7 +263,7 @@ const DashboardPage = () => {
                   />
                 </div>
                 <div className="grid col-span-4">
-                  <h3 className="text-[var(--white)] text-2xl font-medium">
+                  <h3 className="text-[var(--white)] text-lg font-medium">
                     $26,498
                   </h3>
                   <p className="text-[var(--lightgray)] text-sm">
