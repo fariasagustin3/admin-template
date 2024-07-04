@@ -186,7 +186,7 @@ const DashboardPage = () => {
                 </div>
               </div>
               <div className="grid col-span-8 ">
-                <BarChart width={370} height={250} data={rangeData}>
+                <BarChart width={expanded ? 450 : 370} height={250} data={rangeData}>
                   <XAxis />
                   <YAxis />
                   <Tooltip />
